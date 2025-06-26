@@ -1,0 +1,86 @@
+# NestJS Supabase Auth API Test Collection
+
+## Health Check
+GET http://localhost:3000/api/health
+
+###
+
+## Welcome Message
+GET http://localhost:3000/api/
+
+###
+
+## Sign Up User
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123",
+  "firstName": "John",
+  "lastName": "Doe"
+}
+
+###
+
+## Login User
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###
+
+## Confirm Registration
+POST http://localhost:3000/api/auth/confirm-register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "token": "123456"
+}
+
+###
+
+## Resend Confirmation Email
+POST http://localhost:3000/api/auth/resend-confirmation
+Content-Type: application/json
+
+{
+  "email": "test@example.com"
+}
+
+###
+
+## Reset Password
+POST http://localhost:3000/api/auth/reset-password
+Content-Type: application/json
+
+{
+  "email": "test@example.com"
+}
+
+###
+
+## Get Profile (Protected - requires Bearer token)
+GET http://localhost:3000/api/auth/profile
+Authorization: Bearer your_supabase_access_token_here
+
+###
+
+## Refresh Token
+POST http://localhost:3000/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "your_supabase_refresh_token_here"
+}
+
+###
+
+## Sign Out
+POST http://localhost:3000/api/auth/signout
+Authorization: Bearer your_supabase_access_token_here
