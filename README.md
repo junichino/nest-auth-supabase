@@ -1,5 +1,12 @@
 # NestJS Supabase Authentication API
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
+[![NestJS](https://img.shields.io/badge/NestJS-10+-red.svg)](https://nestjs.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue.svg)](https://www.typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-Integrated-green.svg)](https://supabase.com/)
+[![Swagger](https://img.shields.io/badge/API-Swagger-brightgreen.svg)](http://localhost:3000/api/docs)
+
 A complete authentication API built with NestJS and Supabase, featuring JWT-based authentication, comprehensive user management, and interactive API documentation.
 
 ## 🚀 Features
