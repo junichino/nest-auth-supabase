@@ -38,7 +38,7 @@ A complete authentication API built with NestJS and Supabase, featuring JWT-base
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/nest-auth-supabase.git
+git clone https://github.com/junichino/nest-auth-supabase.git
 cd nest-auth-supabase
 
 # Install dependencies
@@ -65,7 +65,7 @@ SUPABASE_URL=https://your-project-ref.supabase.co
 SUPABASE_ANON_KEY=your_actual_supabase_anon_key
 
 # Application
-PORT=3001
+PORT=3000
 NODE_ENV=development
 ```
 
@@ -84,15 +84,15 @@ npm run start:prod
 
 Once the application is running:
 
-- **API Base URL**: http://localhost:3001/api
-- **Swagger Documentation**: http://localhost:3001/api/docs
-- **Health Check**: http://localhost:3001/api/health
+- **API Base URL**: http://localhost:3000/api
+- **Swagger Documentation**: http://localhost:3000/api/docs
+- **Health Check**: http://localhost:3000/api/health
 
 ## 📚 API Documentation
 
 ### Interactive Swagger UI
 
-Visit http://localhost:3001/api/docs to access the interactive API documentation where you can:
+Visit http://localhost:3000/api/docs to access the interactive API documentation where you can:
 
 ✅ View all available endpoints  
 ✅ Test APIs directly in the browser  
@@ -122,7 +122,7 @@ Visit http://localhost:3001/api/docs to access the interactive API documentation
 ### 1. Register a New User
 
 ```bash
-curl -X POST "http://localhost:3001/api/auth/signup" \
+curl -X POST "http://localhost:3000/api/auth/signup" \
   -H "Content-Type: application/json" \
   -d '{
     "email": "user@example.com",
@@ -135,7 +135,7 @@ curl -X POST "http://localhost:3001/api/auth/signup" \
 ### 2. Login
 
 ```bash
-curl -X POST "http://localhost:3001/api/auth/login" \
+curl -X POST "http://localhost:3000/api/auth/login" \
   -H "Content-Type: application/json" \
   -d '{
     "email": "user@example.com",
@@ -146,14 +146,14 @@ curl -X POST "http://localhost:3001/api/auth/login" \
 ### 3. Get Profile (with Bearer token)
 
 ```bash
-curl -X GET "http://localhost:3001/api/auth/profile" \
+curl -X GET "http://localhost:3000/api/auth/profile" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### 4. Refresh Token
 
 ```bash
-curl -X POST "http://localhost:3001/api/auth/refresh" \
+curl -X POST "http://localhost:3000/api/auth/refresh" \
   -H "Content-Type: application/json" \
   -d '{
     "refreshToken": "YOUR_REFRESH_TOKEN"
@@ -244,7 +244,7 @@ src/
 docker build -t nest-auth-supabase .
 
 # Run container
-docker run -p 3001:3001 --env-file .env nest-auth-supabase
+docker run -p 3000:3000 --env-file .env nest-auth-supabase
 ```
 
 ### Using Node.js
@@ -263,17 +263,17 @@ Use the included test JSON files:
 
 ```bash
 # Test signup
-curl -X POST "http://localhost:3001/api/auth/signup" \
+curl -X POST "http://localhost:3000/api/auth/signup" \
   -H "Content-Type: application/json" \
   -d @test-signup.json
 
 # Test login  
-curl -X POST "http://localhost:3001/api/auth/login" \
+curl -X POST "http://localhost:3000/api/auth/login" \
   -H "Content-Type: application/json" \
   -d @test-login.json
 
 # Test refresh
-curl -X POST "http://localhost:3001/api/auth/refresh" \
+curl -X POST "http://localhost:3000/api/auth/refresh" \
   -H "Content-Type: application/json" \
   -d @test-refresh-real.json
 ```
